@@ -1,3 +1,19 @@
-<p>
-  form works!
-</p>
+<section class="form">
+  <form [formGroup]="formContent" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input class="form-control" type="text" id="name" formControlName="name" placeholder="Insert name">
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input class="form-control" type="number" id="age" formControlName="age" placeholder="Insert age">
+      <div *ngIf="formContent.get('age').errors.min">Minimum age 0</div>
+      <div *ngIf="formContent.get('age').errors.max">Maximum age 120</div>
+    </div>
+
+    <button type="submit" [disabled]="!formContent.valid">Submit</button>
+    <button type="button" (click)="onReset()">Limpar</button>
+  </form>
+  <pre>Form Values: {{ this.formContent.value | json }}</pre>
+  <pre>Form Status: {{ this.formContent.status }}</pre>
+</section>
