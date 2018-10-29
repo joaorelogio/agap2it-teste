@@ -7,6 +7,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContentComponent } from './components/content/content.component';
 import { EmptyComponent } from './components/empty/empty.component';
+import { FormComponent } from './components/form/form.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { EmptyComponent } from './components/empty/empty.component';
     TopbarComponent,
     SidebarComponent,
     ContentComponent,
-    EmptyComponent
+    EmptyComponent,
+    FormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
