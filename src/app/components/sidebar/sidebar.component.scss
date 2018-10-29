@@ -1,4 +1,15 @@
 .sidebar {
     background-color: white;
     min-height: 100%;
+    position: relative;
+    
+    .container-fluid {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    button {
+        margin: 20px auto;
+        display: block;
+    }
 }

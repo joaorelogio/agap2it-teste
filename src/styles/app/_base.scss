@@ -23,8 +23,18 @@ ul {
 main {
     background-color: red;
     min-height: calc(100% - #{$header-height});
+    display: flex;
+    flex-wrap: wrap;
 
-    .container-fluid {
+    app-sidebar {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        min-height: 100%;
+    }
+
+    app-content {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
         min-height: 100%;
     }
 }
