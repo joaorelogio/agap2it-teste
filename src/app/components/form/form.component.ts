@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CustomValidatorService } from '../../services/custom-validator.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -21,8 +20,8 @@ export class FormComponent implements OnInit {
 
   createForm() {
     this.formContent = this.fb.group({
-      name: ['', [Validators.required, CustomValidatorService.max(100), CustomValidatorService.min(0)]],
-      age: ['', Validators.required]
+      name: new FormControl('', Validators.required),
+      age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(120)])
     });
   }
 
