@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { EmptyComponent } from './components/empty/empty.component';
 import { FormComponent } from './components/form/form.component';
 import { PostsComponent } from './components/posts/posts.component';
 
-import { CustomValidatorService } from './services/custom-validator.service';
+// import { CustomValidatorService } from './services/custom-validator.service';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { CustomValidatorService } from './services/custom-validator.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    CustomValidatorService
+    // CustomValidatorService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
